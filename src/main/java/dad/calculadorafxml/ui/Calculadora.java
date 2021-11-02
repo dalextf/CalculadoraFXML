@@ -1,4 +1,4 @@
-package dad.calculadorafxml;
+package dad.calculadorafxml.ui;
 
 /**
  * Implementación de la lógica de una calculadora.
