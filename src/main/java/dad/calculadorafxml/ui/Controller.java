@@ -1,13 +1,15 @@
 package dad.calculadorafxml.ui;
 
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.ReadOnlyStringProperty;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
@@ -20,6 +22,8 @@ public class Controller implements Initializable {
     private Calculadora calculadora = new Calculadora();
 
     private StringProperty numeros = new SimpleStringProperty();
+
+    private ReadOnlyStringWrapper tema = new ReadOnlyStringWrapper(this, "tema");
 
     @FXML
     private GridPane view;
@@ -35,6 +39,7 @@ public class Controller implements Initializable {
 
     @FXML
     private Button sumaButton, tresButton, unoButton;
+
 
 
     @FXML
@@ -155,7 +160,33 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pantallaField.textProperty().bind(numeros);
         numeros.set(calculadora.getPantalla());
+
+        // prueba menú
+
+        view.getStylesheets().add("/css/clasico.css");
+
+        MenuItem clasicoItem = new MenuItem("Clasico");
+        clasicoItem.setOnAction(e -> {
+            view.getStylesheets().remove(0);
+
+
+            view.getStylesheets().add("/css/clasico.css");
+        });
+
+        MenuItem modernoItem = new MenuItem("Moderno");
+        modernoItem.setOnAction(e -> {
+            view.getStylesheets().remove(0);
+            view.getStylesheets().add("/css/moderno.css");
+        });
+
+        ContextMenu menu = new ContextMenu(clasicoItem, modernoItem);
+
+        view.setOnContextMenuRequested(e -> {
+            menu.show(view, e.getSceneX(), e.getSceneY());
+        });
+
     }
+
 
     public GridPane getView() {
         return view;

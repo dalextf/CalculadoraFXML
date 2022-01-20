@@ -1,0 +1,86 @@
+.root {
+    -fx-background-color: #333333;
+    -fx-font-family: monospace;
+    -fx-hgap: 1px;
+    -fx-vgap: 1px;
+}
+
+#pantallaField {
+    -fx-text-fill: lightgrey;
+    -fx-font-size: 25px;
+    -fx-alignment: center-right;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 10px 10px 10px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0px 0px 0px 0px;
+}
+
+.button {
+    -fx-font-size: 16pt;
+    -fx-background-radius: 0px;
+    -fx-background-insets: 0px;
+}
+
+#ceroButton, #unoButton, #dosButton, #tresButton, #cuatroButton, #cincoButton,
+#seisButton, #sieteButton, #ochoButton, #nueveButton, #comaButton {
+    -fx-background-color: darkgray;
+    -fx-text-fill: white;
+}
+
+#ceroButton:hover, #unoButton:hover, #dosButton:hover, #tresButton:hover, #cuatroButton:hover, #cincoButton:hover,
+#seisButton:hover, #sieteButton:hover, #ochoButton:hover, #nueveButton:hover, #comaButton:hover {
+    -fx-background-color: white;
+    -fx-text-fill: darkgray;
+}
+
+#ceroButton:pressed, #unoButton:pressed, #dosButton:pressed, #tresButton:pressed, #cuatroButton:pressed, #cincoButton:pressed,
+#seisButton:pressed, #sieteButton:pressed, #ochoButton:pressed, #nueveButton:pressed, #comaButton:pressed {
+    -fx-background-color: black;
+    -fx-text-fill: lightgray;
+}
+
+#borrarButton, #limpiarButton {
+    -fx-text-fill: black;
+    -fx-background-color: lightgray;
+}
+
+#borrarButton:hover, #limpiarButton:hover {
+    -fx-background-color: white;
+}
+
+#borrarButton:pressed, #limpiarButton:pressed {
+    -fx-text-fill: lightgray;
+    -fx-background-color: black;
+}
+
+#multiplyButton, #divisionButton, #sumaButton, #restaButton {
+    -fx-text-fill: white;
+    -fx-background-color: orange;
+}
+
+#multiplyButton:hover, #divisionButton:hover, #sumaButton:hover, #restaButton:hover {
+    -fx-background-color: darkorange;
+}
+
+#multiplyButton:hover:default, #divisionButton:hover:default,
+#sumaButton:hover:default, #restaButton:hover:default {
+    -fx-background-color: red;
+}
+
+#multiplyButton:pressed, #divisionButton:pressed,
+#sumaButton:pressed, #restaButton:pressed {
+    -fx-text-fill: orange;
+    -fx-background-color: white;
+}
+
+.button:focused {
+    border-color: white;
+}
+
+.button:armed {
+    border-color: yellow;
+}
+
+#igualButton:default {
+    -fx-background-color: orangered;
+}
