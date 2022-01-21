@@ -168,8 +168,6 @@ public class Controller implements Initializable {
         MenuItem clasicoItem = new MenuItem("Clasico");
         clasicoItem.setOnAction(e -> {
             view.getStylesheets().remove(0);
-
-
             view.getStylesheets().add("/css/clasico.css");
         });
 
@@ -181,8 +179,8 @@ public class Controller implements Initializable {
 
         ContextMenu menu = new ContextMenu(clasicoItem, modernoItem);
 
-        view.setOnContextMenuRequested(e -> {
-            menu.show(view, e.getSceneX(), e.getSceneY());
+        view.setOnMouseClicked(e -> {
+            menu.show(view, e.getScreenX(), e.getScreenY());
         });
 
     }
